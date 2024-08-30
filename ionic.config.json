@@ -1,0 +1,7 @@
+{
+  "name": "buryApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
