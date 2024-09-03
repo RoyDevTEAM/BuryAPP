@@ -1,0 +1,87 @@
+
+  
+  .transparent-toolbar {
+    --background: transparent;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-logo {
+    width: 90px;
+    height: 70px;
+  }
+  
+
+.back-button {
+    --color: white; /* Color del ícono de retroceso */
+  }
+  .container {
+    --background: url('/assets/img/bk.png') no-repeat center center / cover;
+    --background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  .mesa-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* Espacio entre las tarjetas */
+  }
+  
+  .mesa-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombras más intensas */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    max-width: 400px; /* Ancho máximo para las tarjetas */
+    width: 100%;
+  }
+  
+  .mesa-card ion-card-content {
+    padding: 15px;
+  }
+  
+  .mesa-details {
+    text-align: center;
+    color: #fff; /* Texto blanco para contraste */
+  }
+  
+  .mesa-image img {
+    border-radius: 8px;
+    width: 100%; /* Asegura que la imagen de la mesa se ajuste al ancho del contenedor */
+    height: auto;
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #f5f5f5; /* Color blanco claro */
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #e0e0e0; /* Texto gris claro para contraste */
+    margin: 8px 0;
+  }
+  
+  .reserve-button {
+    --border-radius: 20px;
+    --background: #000; /* Fondo negro */
+    --color: white;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    border: 2px solid darkblue; /* Borde azul oscuro */
+    margin-top: 10px;
+    border-radius: 20px;
+
+  }
+  
+  
+  

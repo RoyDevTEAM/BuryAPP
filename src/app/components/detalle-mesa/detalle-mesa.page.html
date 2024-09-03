@@ -1,0 +1,35 @@
+
+
+<ion-content class="container">
+  <ion-header>
+    <ion-toolbar class="transparent-toolbar">
+      <ion-buttons slot="start">
+        <ion-button fill="clear" (click)="goBack()" class="back-button">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <div class="logo">
+        <img src="/assets/img/header.png" alt="Logo" class="header-logo">
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <div class="mesa-container">
+    <ion-card *ngFor="let mesa of mesas" class="mesa-card">
+      <ion-card-content>
+        <div class="mesa-image" *ngIf="mesa.Imagen">
+          <img [src]="mesa.Imagen" alt="Imagen de la Mesa">
+        </div>
+        <div class="mesa-details">
+          <h2>Mesa {{ mesa.ID }}</h2>
+          <p>{{ mesa.Descripcion }}</p>
+          <p>Precio: {{ mesa.Precio | currency:'BS' }}</p>
+          <p>Anticipo: {{ mesa.Anticipo | currency:'BS' }}</p>
+          <ion-button (click)="goToReservaForm(mesa.ID)" class="reserve-button">
+            <ion-icon name="bookmarks-outline"></ion-icon>
+            Reservar
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

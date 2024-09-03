@@ -1,0 +1,87 @@
+.transparent-toolbar {
+    --background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Asegura que el header esté por encima del contenido */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .header-logo {
+    width: 90px;
+    height: 70px;
+  }
+  
+  .back-button {
+    --color: white;
+  }
+  
+  ion-content {
+    --background: url('/assets/img/bk.png') no-repeat center center / cover;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reserva-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: transparent;
+    border-radius: 10px;
+    overflow-y: auto; /* Permite el desplazamiento cuando el teclado está abierto */
+  }
+  
+  form {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  ion-item {
+    --background: rgba(0, 0, 0, 0.6);
+    --border-radius: 15px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+  }
+  
+  ion-input {
+    --color: white;
+  }
+  
+  .reserva-button {
+    margin-top: 20px;
+    --background: #000;
+    --border-radius: 5px;
+    text-transform: uppercase;
+    --color: white;
+  }
+  
+  ion-icon {
+    cursor: pointer;
+    --color: white;
+  }
+  
+  /* Diseño del calendario */
+  .fecha-container {
+    max-width: 300px;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  ion-datetime {
+    --width: 100%;
+    --min-height: 250px;
+    max-height: 300px;
+    --border-radius: 10px;
+    --background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+  }
+  

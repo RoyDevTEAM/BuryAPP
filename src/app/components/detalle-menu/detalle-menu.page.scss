@@ -1,0 +1,64 @@
+
+  
+  .transparent-toolbar {
+    --background: transparent;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-logo {
+    width: 90px;
+    height: 70px;
+  }
+  .back-button {
+    --color: white; /* Color del ícono de retroceso */
+  }
+.menu-container {
+    padding: 20px;
+    --background: url('/assets/img/bk.png') no-repeat center center / cover;
+  }
+  
+  .bar-info {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+
+  }
+  
+ 
+  ion-card.product-card {
+    --border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+  }
+  
+  ion-list {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between; /* Distribuye el nombre y el precio en los extremos */
+    align-items: center;
+  }
+  
+  .product-name {
+    color: #ffff; /* Título en verde para contraste */
+    font-weight: bold;
+    flex: 1; /* Permite que el nombre ocupe el espacio restante */
+  }
+  
+  .product-price {
+    font-weight: bold;
+    color: #ffff; /* Precio en amarillo para resaltar */
+    margin-left: auto; /* Alinea el precio a la derecha */
+    font-size: 16px;
+  }
+  

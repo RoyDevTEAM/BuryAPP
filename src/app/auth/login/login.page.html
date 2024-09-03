@@ -1,0 +1,52 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <div class="logo">
+      <img src="/assets/img/logo.png" alt="Cocktail Icon">
+    </div>
+    
+    <form (ngSubmit)="login()">
+      <ion-item>
+        <ion-input 
+          [(ngModel)]="email"
+          name="email"
+          label="Email"
+          labelPlacement="floating"
+          type="email"
+          required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input 
+          [(ngModel)]="password"
+          name="password"
+          label="Contraseña"
+          labelPlacement="floating"
+          type="password"
+          required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-button expand="block" class="login-button" type="submit">Ingresar</ion-button>
+    </form>
+    
+    <p class="register-text">¿No tienes una cuenta? <a [routerLink]="['/register']">Regístrate</a></p>
+    
+    <ion-button fill="clear" class="google-button">
+      <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+    </ion-button>
+    
+    <p class="local-register">Registrar local</p>
+  </div>
+  
+  <!-- Toast para mostrar mensajes de alerta -->
+  <ion-toast
+    *ngIf="toastMessage"
+    [message]="toastMessage"
+    duration="2000"
+    color="danger"
+    (ionToastDidDismiss)="toastMessage = ''">
+  </ion-toast>
+</ion-content>

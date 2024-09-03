@@ -1,0 +1,83 @@
+<ion-content class="ion-padding" fullscreen scrollEvents="true" forceOverscroll="false">
+  <ion-header>
+    <ion-toolbar class="transparent-toolbar">
+      <ion-buttons slot="start">
+        <ion-button fill="clear" (click)="goBack()" class="back-button">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <div class="logo">
+        <img src="/assets/img/header.png" alt="Logo" class="header-logo">
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <div class="reserva-container">
+   
+    <form (ngSubmit)="enviarReserva()">
+      <!-- Campo de Nombre -->
+      <ion-item>
+        <ion-input 
+          [(ngModel)]="nombre"
+          name="nombre"
+          label="Nombre"
+          labelPlacement="floating"
+          required>
+        </ion-input>
+      </ion-item>
+      
+      <!-- Campo de Número de Personas -->
+      <ion-item>
+        <ion-input 
+          [(ngModel)]="numeroPersonas"
+          name="numeroPersonas"
+          label="Número de Personas"
+          labelPlacement="floating"
+          type="number"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <!-- Campo de Fecha -->
+      <ion-item>
+        <ion-input 
+          placeholder="Seleccione Fecha"
+          [value]="fecha ? fecha : ''" 
+          readonly
+          (click)="toggleFecha()">
+        </ion-input>
+        <ion-icon name="calendar-outline" slot="end" (click)="toggleFecha()"></ion-icon>
+      </ion-item>
+      <div class="fecha-container" [ngStyle]="{ display: mostrarFecha ? 'block' : 'none' }">
+        <ion-datetime 
+          [(ngModel)]="fecha"
+          name="fecha"
+          presentation="date"
+          (ionChange)="toggleFecha()"
+          required>
+        </ion-datetime>
+      </div>
+
+      <!-- Campo de Hora (Solo Texto) -->
+      <ion-item>
+        <ion-input 
+          [(ngModel)]="hora"
+          name="hora"
+          placeholder="Ingrese la Hora (HH:MM)"
+          required>
+        </ion-input>
+      </ion-item>
+      
+      <!-- Botón de Enviar -->
+      <ion-button expand="block" class="reserva-button" type="submit">Enviar Reserva</ion-button>
+    </form>
+  </div>
+  
+  <!-- Toast para mensajes de error -->
+  <ion-toast
+    *ngIf="toastMessage"
+    [message]="toastMessage"
+    duration="2000"
+    color="danger"
+    (ionToastDidDismiss)="toastMessage = ''">
+  </ion-toast>
+</ion-content>

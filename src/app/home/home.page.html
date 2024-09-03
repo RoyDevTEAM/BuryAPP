@@ -1,20 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- home.page.html -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <app-nav-bar></app-nav-bar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="home-container">
+
+    <!-- Buscador dinámico -->
+    <ion-item class="search-item">
+      <ion-input 
+        [(ngModel)]="searchTerm"
+        (ionInput)="filterBares($event)"
+        placeholder="Buscar bares...">
+      </ion-input>
+    </ion-item>
+
+    <!-- Botones de filtro por categoría -->
+    <div class="category-filters">
+      <ion-button *ngFor="let categoria of categorias" (click)="filterByCategoria(categoria.ID)"  class="login-button">
+        {{ categoria.nombre }}
+      </ion-button>
+      <ion-button (click)="filterByCategoria(null)" class="login-button">All</ion-button>
+    </div>
+
+    <!-- Mensaje de no encontrado -->
+    <div *ngIf="searchTerm && filteredBares.length === 0" class="no-results">
+      <p>No se encontraron bares</p>
+    </div>
+
+    <!-- Mostrar bares como tarjetas -->
+    <div class="bars-container" *ngIf="!searchTerm">
+      <ion-card *ngFor="let bar of filteredBares" [routerLink]="['/detalle-bar', bar.ID]" class="bar-card">
+        <div class="bar-card-header" [style.backgroundImage]="'url(' + bar.LogoURL + ')'">
+          <ion-card-subtitle color="red">{{ getCategoriaNombre(bar.Categoria_ID) }}</ion-card-subtitle>
+        </div>
+        <ion-card-content>
+          <p>{{ bar.Nombre }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Mostrar bares como lista -->
+    <ul class="bars-list" *ngIf="searchTerm">
+      <li *ngFor="let bar of filteredBares">
+        <img *ngIf="bar.LogoURL" [src]="bar.LogoURL" alt="{{ bar.Nombre }}" class="bar-logo-list">
+        <strong>{{ bar.Nombre }}</strong> - {{ getCategoriaNombre(bar.Categoria_ID) }}<br>
+      </li>
+    </ul>
   </div>
 </ion-content>

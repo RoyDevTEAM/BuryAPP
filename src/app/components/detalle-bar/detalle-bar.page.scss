@@ -1,0 +1,121 @@
+.transparent-toolbar {
+  --background: transparent;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.header-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.back-button {
+  --color: white; /* Color del ícono de retroceso */
+}
+
+.container {
+  --background: url('/assets/img/bk.png') no-repeat center center / cover;
+  padding: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-Eventos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-container ion-button {
+  margin: 0 10px;
+}
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+ion-button {
+  --border-radius: 15px;
+  border-radius: 15px;
+  --background: #000;
+  --color: white;
+  font-size: 14px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  font-weight: 700;
+  border: solid 2px #5e09c0;
+}
+
+.media-section ion-card {
+  margin-bottom: 10px;
+  --background: rgba(255, 255, 255, 0.2);
+  --border-radius: 8px;
+  overflow: hidden; /* Asegura que el contenido no sobresalga del borde del card */
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 8px;
+}
+
+.responsive-video {
+  width: 100%;
+  height: auto; /* Mantiene la proporción del video */
+  border-radius: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.action-buttons ion-button {
+  margin: 0 10px;
+}
+
+ion-modal {
+  --width: 90%;
+  --height: 200px;
+  --border-radius: 12px;
+  --background: black;
+  max-width: 400px;
+}
+
+ion-modal ion-header {
+  --background: #5e09c0;
+  --color: white;
+}
+
+ion-modal ion-button {
+  color: white;
+}
+
+.modal-content {
+  color: white;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 20px;
+  text-align: justify;
+}
+
+/* Estilos para el iframe del video */
+.responsive-video iframe {
+  width: 100%;
+  height: 315px; /* Altura fija para el iframe, ajusta según sea necesario */
+}
+.toast-message {
+  --background: #333;
+  --color: #fff;
+  --padding: 10px;
+}

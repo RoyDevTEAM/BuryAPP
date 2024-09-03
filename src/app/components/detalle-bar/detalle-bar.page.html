@@ -1,0 +1,89 @@
+<ion-content class="container">
+ 
+  <ion-header>
+    <ion-toolbar class="transparent-toolbar">
+      <ion-buttons slot="start">
+        <ion-button fill="clear" (click)="goBack()" class="back-button">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <div class="logo">
+      <img src="/assets/img/logo.png" alt="Logo" class="header-logo">
+    </div>
+  </ion-header>
+
+  <!-- Botón para Eventos -->
+  <div class="button-Eventos">
+    <ion-button>
+      {{ bar?.Nombre }} <!-- Muestra el nombre del bar -->
+    </ion-button>
+    <!-- Botón de Favoritos independiente -->
+    <ion-button fill="clear" (click)="toggleFavorito()" class="heart-button">
+      <ion-icon
+        [name]="isFavorito ? 'heart' : 'heart-outline'"
+        class="heart-icon">
+      </ion-icon>
+    </ion-button>
+  </div>
+  <!-- Botones para Horario y Menú -->
+  <div class="button-container">
+    <ion-button (click)="openHorarioModal()">
+      Horario
+    </ion-button>
+    <ion-button [routerLink]="['/detalle-menu', bar?.ID]">
+      Menú
+    </ion-button>
+  </div>
+
+  <!-- Botón para Eventos -->
+  <div class="button-Eventos">
+    <ion-button [routerLink]="['/detalle-eventos']">
+      Eventos
+    </ion-button>
+  </div>
+
+  
+  <!-- Sección de Imágenes y Videos -->
+<div class="media-section">
+  <ion-card *ngFor="let media of mediaList">
+    <ion-card-content>
+      <img *ngIf="media.tipo === 'imagen'" [src]="media.URL" alt="Imagen del Bar" class="responsive-img">
+      <iframe *ngIf="media.tipo === 'video'" [src]="getVideoEmbedUrl(media.URL)" frameborder="0" allowfullscreen class="responsive-video"></iframe>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+  <!-- Botones de Acción -->
+  <div class="action-buttons">
+    <ion-button (click)="navigateToLocal()">
+      <ion-icon name="pin-outline"></ion-icon>
+      Ir al Local
+    </ion-button>
+    <ion-button (click)="reserve()">
+      <ion-icon name="bookmark-outline"></ion-icon>
+      Reservar
+    </ion-button>
+  </div>
+
+  <!-- Modal para Horario -->
+  <ion-modal [isOpen]="isHorarioModalOpen" (didDismiss)="isHorarioModalOpen = false">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title>Horario del Local</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="isHorarioModalOpen = false">
+              <ion-icon name="close-outline"></ion-icon>
+              Cerrar
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content padding color="white">
+        <p>{{ horarioDetails }}</p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

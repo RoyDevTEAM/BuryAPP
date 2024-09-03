@@ -1,0 +1,29 @@
+
+<ion-content class="menu-container">
+  <ion-header>
+    <ion-toolbar class="transparent-toolbar">
+      <ion-buttons slot="start">
+        <ion-button fill="clear" (click)="goBack()" class="back-button">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <div class="logo">
+        <img src="/assets/img/header.png" alt="Logo" class="header-logo">
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <!-- Logo y nombre del bar -->
+  <div class="bar-info">
+    <h2>{{ barName }}</h2>
+  </div>
+
+  <!-- Lista de productos -->
+  <ion-list>
+    <ion-card *ngFor="let producto of productos" class="product-card">
+      <ion-card-header class="card-header">
+        <ion-card-title class="product-name">{{ producto.Nombre }}</ion-card-title>
+        <span class="product-price">{{ producto.Precio | currency:'USD':'symbol' }}</span>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>

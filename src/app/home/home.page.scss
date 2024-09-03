@@ -1,27 +1,163 @@
-#container {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estilo de fondo */
+
+
+ion-content {
+  --background: url('/assets/img/bk.png') no-repeat center center / cover;
+}
+
+/* Contenedor principal */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinear al inicio para mantener el buscador visible */
+  height: 100%;
+  padding: 20px;
+  background: transparent;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+/* Estilo del buscador */
+.search-item {
+  width: 100%;
+  max-width: 500px;
+  --background: #000;
+  --border-radius: 15px;
+  margin-bottom: 20px;
+  position: sticky; /* Mantener el buscador fijo en la parte superior */
+  top: 0;
+  border: solid 3px #5e09c0;
+  border-radius: 28px;
+  z-index: 10;
+}
+
+ion-input {
+  --color: white;
+  --placeholder-color: rgba(255, 255, 255, 0.6); /* Color del placeholder */
+  padding-left: 10px; /* Espacio dentro del input */
+}
+
+/* Mensaje de no encontrado */
+.no-results {
+  color: white;
+  margin: 20px;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+/* Contenedor de bares */
+.bars-container {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  margin-top: 10px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+/* Estilo de las tarjetas de bares */
+ion-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombras más intensas */
+  background: transparent; /* Fondo transparente para que el fondo de la tarjeta sea el logo */
+  color: white;
+  width: 100%;
+  padding: 5px;
+  position: relative;
+}
 
-  color: #8c8c8c;
+/* Estilo del contenedor de filtros de categoría */
+.category-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
 
+/* Estilo del logo en la tarjeta como fondo */
+.bar-card-header {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad del texto */
+  height: 100px; /* Ajusta la altura según el tamaño del logo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo del título de las tarjetas */
+ion-card-title {
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
   margin: 0;
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
-#container a {
-  text-decoration: none;
+/* Estilo del subtítulo de las tarjetas */
+ion-card-subtitle {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Contenido de la tarjeta */
+ion-card-content {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para el contenido */
+}
+
+/* Contenido del texto de la tarjeta */
+ion-card-content p {
+  font-size: 0.9rem; /* Tamaño de fuente más grande */
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Estilo del logo en la lista */
+.bar-logo-list {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Estilo de la lista de bares */
+.bars-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  color: white;
+}
+
+.bars-list li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+.login-button {
+  margin-top: 20px;
+  --background: #000;
+  border-radius: 25px;
+  --border-radius: 25px;
+  border: solid 3px #5e09c0;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.login-button:hover {
+  margin-top: 20px;
+  --background: #ffffff;
+  border-radius: 25px;
+  --border-radius: 25px;
+  border: solid 3px #5e09c0;
+  text-transform: uppercase;
+  color: #5e09c0;
+  font-weight: 900;
 }

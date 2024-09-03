@@ -1,0 +1,29 @@
+<ion-content class="ion-padding">
+  <div class="register-container">
+    <div class="logo">
+      <img src="/assets/img/logo.png" alt="Cocktail Icon">
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <ion-item>
+        <ion-input formControlName="name" label="Name" labelPlacement="floating" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="email" label="Gmail" labelPlacement="floating" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="password" label="Contraseña" labelPlacement="floating" type="password"></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="block" class="register-button">Registrar</ion-button>
+    </form>
+
+    <p class="login-text">¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
+
+    <ion-button fill="clear" class="google-button">
+      <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+    </ion-button>
+
+  </div>
+</ion-content>

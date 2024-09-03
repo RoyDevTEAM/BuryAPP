@@ -1,0 +1,38 @@
+<!-- Importación de Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<!-- Importación de FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+
+<ion-content [fullscreen]="true" class="bg-gray-900">
+  <ion-header [translucent]="true" class="bg-transparent">
+    <ion-toolbar class="transparent-toolbar">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home" class="back-button"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <main class="flex-1 overflow-y-auto px-4 py-6 space-y-4">
+    <div *ngIf="favoritos.length === 0" class="text-center p-6 text-white">
+      <p>No tienes bares favoritos.</p>
+    </div>
+    <div *ngFor="let favorito of favoritos" class="favorite-card bg-gray-800 p-4 rounded-xl shadow-lg flex items-start">
+      <img [src]="favorito.LogoURL || 'assets/img/default-logo.png'" alt="Logo Bar" class="w-12 h-12 rounded-full mr-4">
+      <div class="flex-1">
+        <h2 class="text-lg font-bold text-white">{{ favorito.Nombre }}</h2>
+        <p class="text-sm text-gray-400">{{ favorito.Descripcion }}</p>
+        <div class="flex items-center mt-2 text-gray-400">
+          <i class="fas fa-map-marker-alt mr-1"></i>
+          <span class="text-sm">{{ favorito.Ubicacion || 'Ubicación no disponible' }}</span>
+          <i class="fas fa-phone ml-4 mr-1"></i>
+          <span class="text-sm">{{ favorito.Telefono || 'Teléfono no disponible' }}</span>
+        </div>
+      </div>
+      <button (click)="confirmEliminarFavorito(favorito.ID)" class="text-red-500 ml-4">
+        <i class="fas fa-trash-alt"></i> <!-- Icono de FontAwesome -->
+      </button>
+    </div>
+  </main>
+</ion-content>
