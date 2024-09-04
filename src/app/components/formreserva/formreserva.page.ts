@@ -21,7 +21,7 @@ export class FormreservaPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Obtener el ID de la mesa de la URL
+    // Obtener el codd maaID de la mesa de la URL
     this.route.paramMap.subscribe(params => {
       this.idMesa = params.get('id'); // ID de la mesa desde la URL
     });
