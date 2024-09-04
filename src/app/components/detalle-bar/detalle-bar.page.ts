@@ -51,6 +51,11 @@ export class DetalleBarPage implements OnInit {
     });
   }
 
+  getSafeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+  
+  
   loadMedia(id: number) {
     this.mediaList = [];
     this.imagenesService.getImagenes().subscribe(imagenes => {
@@ -59,7 +64,7 @@ export class DetalleBarPage implements OnInit {
         .map(imagen => ({ ...imagen, tipo: 'imagen' }));
       this.mediaList = this.mediaList.concat(imagenList);
     });
-
+  
     this.videosService.getVideos().subscribe(videos => {
       const videoList = videos
         .filter(video => video.Bar_ID === id)
@@ -67,7 +72,7 @@ export class DetalleBarPage implements OnInit {
       this.mediaList = this.mediaList.concat(videoList);
     });
   }
-
+  
   checkIfFavorito(id: number) {
     this.favoritosService.getFavoritos().subscribe(favoritos => {
       this.isFavorito = favoritos.some(fav => fav.bar_id === id);
@@ -116,12 +121,7 @@ export class DetalleBarPage implements OnInit {
     await toast.present();
   }
 
-  getVideoEmbedUrl(url: string): SafeResourceUrl {
-    const videoId = url.split('v=')[1]?.split('&')[0];
-    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
-  }
-
+ 
   loadHorario(id: number) {
     this.horariosService.getHorario(id).subscribe(data => {
       if (data) {

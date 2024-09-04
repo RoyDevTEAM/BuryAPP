@@ -1,5 +1,5 @@
 <ion-content class="container">
- 
+
   <ion-header>
     <ion-toolbar class="transparent-toolbar">
       <ion-buttons slot="start">
@@ -20,40 +20,35 @@
     </ion-button>
     <!-- Botón de Favoritos independiente -->
     <ion-button fill="clear" (click)="toggleFavorito()" class="heart-button">
-      <ion-icon
-        [name]="isFavorito ? 'heart' : 'heart-outline'"
-        class="heart-icon">
-      </ion-icon>
+      <ion-icon [name]="isFavorito ? 'heart' : 'heart-outline'" class="heart-icon"></ion-icon>
     </ion-button>
   </div>
+  
   <!-- Botones para Horario y Menú -->
   <div class="button-container">
-    <ion-button (click)="openHorarioModal()">
-      Horario
-    </ion-button>
-    <ion-button [routerLink]="['/detalle-menu', bar?.ID]">
-      Menú
-    </ion-button>
+    <ion-button (click)="openHorarioModal()">Horario</ion-button>
+    <ion-button [routerLink]="['/detalle-menu', bar?.ID]">Menú</ion-button>
   </div>
 
   <!-- Botón para Eventos -->
   <div class="button-Eventos">
-    <ion-button [routerLink]="['/detalle-eventos']">
-      Eventos
-    </ion-button>
+    <ion-button [routerLink]="['/detalle-eventos']">Eventos</ion-button>
   </div>
 
-  
   <!-- Sección de Imágenes y Videos -->
-<div class="media-section">
-  <ion-card *ngFor="let media of mediaList">
-    <ion-card-content>
-      <img *ngIf="media.tipo === 'imagen'" [src]="media.URL" alt="Imagen del Bar" class="responsive-img">
-      <iframe *ngIf="media.tipo === 'video'" [src]="getVideoEmbedUrl(media.URL)" frameborder="0" allowfullscreen class="responsive-video"></iframe>
-    </ion-card-content>
-  </ion-card>
-</div>
-
+  <div class="media-section">
+    <ion-card *ngFor="let media of mediaList">
+      <ion-card-content>
+        <!-- Imágenes -->
+        <img *ngIf="media.tipo === 'imagen'" [src]="media.URL" alt="Imagen del Bar" class="responsive-img">
+        
+        <video *ngIf="media.tipo === 'video'" controls class="responsive-video">
+          <source [src]="getSafeUrl(media.URL)" type="video/mp4">
+        </video>
+        
+      </ion-card-content>
+    </ion-card>
+  </div>
 
   <!-- Botones de Acción -->
   <div class="action-buttons">
