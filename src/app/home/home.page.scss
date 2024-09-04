@@ -54,13 +54,14 @@ ion-input {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Tres columnas */
   margin-top: 10px;
+  gap: 10px;
 }
 
 /* Estilo de las tarjetas de bares */
 ion-card {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombras más intensas */
-  background: transparent; /* Fondo transparente para que el fondo de la tarjeta sea el logo */
+  background: black; /* Fondo transparente para que el fondo de la tarjeta sea el logo */
   color: white;
   width: 100%;
   padding: 5px;
@@ -81,41 +82,34 @@ ion-card {
   padding: 20px;
   border-radius: 10px;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad del texto */
-  height: 100px; /* Ajusta la altura según el tamaño del logo */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  height: 80px; /* Ajusta la altura para que se vea mejor */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* Estilo del título de las tarjetas */
-ion-card-title {
-  font-size: 1.2rem; /* Tamaño de fuente más grande */
-  margin: 0;
+/* Título de las tarjetas */
+ion-card-title, ion-card-subtitle {
+  font-size: 1.2rem;
   text-align: center;
   color: white;
-  font-weight: bold;
+  margin-top: 0;
 }
 
-/* Estilo del subtítulo de las tarjetas */
-ion-card-subtitle {
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 5px;
-}
-
-/* Contenido de la tarjeta */
 ion-card-content {
   padding: 10px;
   background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para el contenido */
+  text-align: center; /* Centrar el texto */
 }
 
-/* Contenido del texto de la tarjeta */
 ion-card-content p {
-  font-size: 0.9rem; /* Tamaño de fuente más grande */
+  font-size: 1rem; /* Tamaño de fuente más grande */
   margin: 0;
   line-height: 1.4;
+  text-align: center; /* Centrar el texto */
+  color: white;
 }
 
 /* Estilo del logo en la lista */
@@ -135,12 +129,33 @@ ion-card-content p {
   color: white;
 }
 
-.bars-list li {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
+/* Estilo de la lista de bares */
+.bars-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  color: white;
+  background-color: black; /* Fondo negro */
+  border: 2px solid white; /* Bordes blancos */
+  border-radius: 10px;
 }
+
+.bars-list li {
+  display: flex;
+  align-items: center; /* Centrar verticalmente los elementos dentro de la lista */
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 1px solid white; /* Línea de separación entre elementos */
+}
+
+.bar-logo-list {
+  width: 70px; /* Aumentar tamaño de la imagen */
+  height: 70px;
+  border-radius: 10%; /* Bordes redondeados */
+  margin-right: 15px;
+}
+
 .login-button {
   margin-top: 20px;
   --background: #000;

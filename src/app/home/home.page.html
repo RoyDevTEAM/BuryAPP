@@ -31,7 +31,6 @@
     <div class="bars-container" *ngIf="!searchTerm">
       <ion-card *ngFor="let bar of filteredBares" [routerLink]="['/detalle-bar', bar.ID]" class="bar-card">
         <div class="bar-card-header" [style.backgroundImage]="'url(' + bar.LogoURL + ')'">
-          <ion-card-subtitle color="red">{{ getCategoriaNombre(bar.Categoria_ID) }}</ion-card-subtitle>
         </div>
         <ion-card-content>
           <p>{{ bar.Nombre }}</p>

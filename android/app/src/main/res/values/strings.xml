@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">buryApp</string>
+    <string name="title_activity_main">buryApp</string>
+    <string name="package_name">buryApp.app.com</string>
+    <string name="custom_url_scheme">buryApp.app.com</string>
+</resources>

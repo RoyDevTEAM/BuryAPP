@@ -1,0 +1,9 @@
+// Capacitor settings file for the Android project
+// Used to import Capacitor dependencies
+
+// Ensure to replace this with the correct path to your node_modules directory
+def nodeModulesPath = new File(["..", "node_modules", "@capacitor", "android"].join(File.separator))
+
+// Include Capacitor Android library
+include ':capacitor-android'
+project(':capacitor-android').projectDir = new File(nodeModulesPath, "capacitor")
