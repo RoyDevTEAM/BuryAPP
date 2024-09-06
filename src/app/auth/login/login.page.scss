@@ -39,6 +39,8 @@ ion-content {
     --background: #000;
     --border-radius: 15px;
     margin-bottom: 15px;
+    border: solid 3px #5e09c0;
+  border-radius: 15px;
   }
   
   ion-input {
@@ -48,8 +50,10 @@ ion-content {
   .login-button {
     margin-top: 20px;
     --background: #000;
-    --border-radius: 5px;
+    --border-radius: 15px;
     text-transform: uppercase;
+    border: solid 3px #5e09c0;
+  border-radius: 15px;
   }
   
   .register-text {

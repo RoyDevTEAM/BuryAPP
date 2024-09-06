@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: 'favoritos',
     loadChildren: () => import('./components/favoritos/favoritos.module').then( m => m.FavoritosPageModule)
+  },
+  {
+    path: 'terminos',
+    loadChildren: () => import('./components/terminos/terminos.module').then( m => m.TerminosPageModule)
   }
 ];
 

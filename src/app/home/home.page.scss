@@ -3,8 +3,10 @@
 /* Estilo de fondo */
 
 
+/* Estilo de fondo */
 ion-content {
   --background: url('/assets/img/bk.png') no-repeat center center / cover;
+  background-attachment: fixed; /* Mantiene el fondo fijo */
 }
 
 /* Contenedor principal */
@@ -32,14 +34,16 @@ ion-content {
   border: solid 3px #5e09c0;
   border-radius: 28px;
   z-index: 10;
+  background: #000; /* Fondo negro para evitar que desaparezca */
 }
 
 ion-input {
   --color: white;
-  --placeholder-color: rgba(255, 255, 255, 0.6); /* Color del placeholder */
-  padding-left: 10px; /* Espacio dentro del input */
+  --placeholder-color: white;
+  padding-left: 10px;
+  background: transparent; /* Asegura que el input tenga fondo transparente */
+  border: none; /* Quita bordes innecesarios */
 }
-
 /* Mensaje de no encontrado */
 .no-results {
   color: white;
@@ -58,32 +62,35 @@ ion-input {
 }
 
 /* Estilo de las tarjetas de bares */
+/* Estilo de las tarjetas de bares */
 ion-card {
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombras más intensas */
-  background: black; /* Fondo transparente para que el fondo de la tarjeta sea el logo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  background: black;
   color: white;
   width: 100%;
   padding: 5px;
   position: relative;
+  height: auto; /* Permitir altura automática para que se ajuste al contenido */
 }
+
 
 /* Estilo del contenedor de filtros de categoría */
 .category-filters {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   margin-bottom: 15px;
 }
 
-/* Estilo del logo en la tarjeta como fondo */
 .bar-card-header {
-  background-size: cover;
+  background-size: contain; /* Asegura que las imágenes se ajusten sin cortar */
   background-position: center;
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
   padding: 20px;
   border-radius: 10px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  height: 80px; /* Ajusta la altura para que se vea mejor */
+  height: 100px; /* Ajusta según el tamaño del contenido */
   display: flex;
   flex-direction: column;
   justify-content: center;
