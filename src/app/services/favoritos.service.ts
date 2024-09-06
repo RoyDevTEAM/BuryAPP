@@ -7,7 +7,7 @@ import { Favorito } from '../models/favorito.model';
   providedIn: 'root'
 })
 export class FavoritosService {
-  private apiUrl = 'http://localhost:8000/api/favoritos'; // URL base del backend
+  private apiUrl = 'https://buryapp-backend.onrender.com/api/favoritos'; // URL base del backend
 
   constructor(private http: HttpClient) { }
 

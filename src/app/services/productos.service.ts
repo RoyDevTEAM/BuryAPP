@@ -9,7 +9,7 @@ import { Producto } from '../models/producto.model';
   providedIn: 'root'
 })
 export class ProductosService {
-  private apiUrl = 'http://localhost:8000/api/productos'; // URL base del backend
+  private apiUrl = 'https://buryapp-backend.onrender.com/api/productos'; // URL base del backend
 
   constructor(private http: HttpClient) { }
 

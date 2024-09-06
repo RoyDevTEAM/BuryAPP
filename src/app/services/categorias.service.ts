@@ -9,7 +9,7 @@ import { Categoria } from '../models/categoria.model';
   providedIn: 'root'
 })
 export class CategoriasService {
-  private apiUrl = 'http://localhost:8000/api/categorias'; // URL base del backend
+  private apiUrl = 'https://buryapp-backend.onrender.com/api/categorias'; // URL base del backend
 
   constructor(private http: HttpClient) { }
 

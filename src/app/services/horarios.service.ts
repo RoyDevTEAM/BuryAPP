@@ -9,7 +9,7 @@ import { Horario } from '../models/horario.model';
   providedIn: 'root'
 })
 export class HorariosService {
-  private apiUrl = 'http://localhost:8000/api/horarios'; // URL base del backend
+  private apiUrl = 'https://buryapp-backend.onrender.com/api/horarios'; // URL base del backend
 
   constructor(private http: HttpClient) { }
 

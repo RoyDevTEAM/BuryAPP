@@ -9,7 +9,7 @@ import { Mesa } from '../models/mesa.model';
   providedIn: 'root'
 })
 export class MesasService {
-  private apiUrl = 'http://localhost:8000/api/mesas'; // URL base del backend
+  private apiUrl = 'https://buryapp-backend.onrender.com//api/mesas'; // URL base del backend
 
   constructor(private http: HttpClient) { }
 

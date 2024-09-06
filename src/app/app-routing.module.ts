@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/detalle-menu/detalle-menu.module').then( m => m.DetalleMenuPageModule)
   },
   {
-    path: 'detalle-eventos',
+    path: 'detalle-eventos/:id',
     loadChildren: () => import('./components/detalle-eventos/detalle-eventos.module').then( m => m.DetalleEventosPageModule)
   },
   {
