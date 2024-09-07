@@ -26,13 +26,14 @@
     height: auto;
     border-radius: 50%; /* Bordes redondeados */
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(0, 0, 0, 0.3); /* Sombra brillante */
-    animation: slideInAndPop 4s ease-in-out, fadeOut 1s 4s forwards; /* Animación de entrada y salida */
+    animation: slideInAndPop 4s ease-in-out, fadeOut 1s 3s forwards; /* Animación de entrada y salida */
   }
   
   .welcome-text {
     position: absolute;
     bottom: 10%; /* Ajusta la posición vertical para estar más cerca del centro */
-    transform: translate(-50%, 0); /* Asegura que esté centrado horizontalmente */
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 2rem;
     color: #fff; /* Letras blancas */
     z-index: 10000;
