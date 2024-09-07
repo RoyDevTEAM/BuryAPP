@@ -1,94 +1,96 @@
 /* app-splash-screen.component.scss */
 .renderer-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/assets/img/bk.png') no-repeat center center fixed; /* Fondo de la animación */
-  background-size: cover; /* Asegura que el fondo cubra toda el área */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999; /* Asegura que esté sobre todos los elementos */
-  overflow: hidden; /* Evita el desbordamiento del contenido */
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-}
-
-.logo {
-  width: 200px; /* Ajusta el tamaño según sea necesario */
-  height: auto;
-  border-radius: 50%; /* Bordes redondeados */
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(0, 0, 0, 0.3); /* Sombra brillante */
-  animation: slideInAndPop 4s ease-in-out, fadeOut 1s 4s forwards; /* Animación de entrada y salida */
-}
-
-.welcome-text {
-  position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/img/bk.png') no-repeat center center fixed; /* Fondo de la animación */
+    background-size: cover; /* Asegura que el fondo cubra toda el área */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Asegura que esté sobre todos los elementos */
+    overflow: hidden; /* Evita el desbordamiento del contenido */
+  }
   
-  transform: translate(-50%, 0); /* Asegura que esté centrado horizontalmente */
-  font-size: 2rem;
-  color: #fff; /* Letras blancas */
-  z-index: 10000;
-  text-align: center;
-  opacity: 0; /* Oculto por defecto para aplicar animación */
-  animation: fadeInText 2s 1s forwards, moveTextUp 2s 1s forwards; /* Desvanecimiento y movimiento del texto */
-}
-
-@media (max-width: 768px) {
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+  
+  .logo {
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    border-radius: 50%; /* Bordes redondeados */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(0, 0, 0, 0.3); /* Sombra brillante */
+    animation: slideInAndPop 4s ease-in-out, fadeOut 1s 3s forwards; /* Animación de entrada y salida */
+  }
+  
   .welcome-text {
-    font-size: 1.5rem; /* Ajuste para pantallas más pequeñas */
+    position: absolute;
+    bottom: 10%; /* Ajusta la posición vertical para estar más cerca del centro */
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #fff; /* Letras blancas */
+    z-index: 10000;
+    text-align: center;
+    opacity: 0; /* Oculto por defecto para aplicar animación */
+    animation: fadeInText 2s 1s forwards, moveTextUp 2s 1s forwards; /* Desvanecimiento y movimiento del texto */
   }
-}
-
-@keyframes slideInAndPop {
-  0% {
-    transform: translateX(-100vw) scale(0.5); /* Comienza desde la izquierda fuera de la vista */
-    opacity: 0;
+  
+  @media (max-width: 768px) {
+    .welcome-text {
+      font-size: 1.5rem; /* Ajuste para pantallas más pequeñas */
+    }
   }
-  50% {
-    transform: translateX(0) scale(1.1); /* Se acerca al centro y aumenta ligeramente el tamaño */
-    opacity: 1;
+  
+  @keyframes slideInAndPop {
+    0% {
+      transform: translateX(-100vw) scale(0.5); /* Comienza desde la izquierda fuera de la vista */
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0) scale(1.1); /* Se acerca al centro y aumenta ligeramente el tamaño */
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0) scale(1); /* Se centra y mantiene el tamaño original */
+      opacity: 1; /* Se mantiene visible */
+    }
   }
-  100% {
-    transform: translateX(0) scale(1); /* Se centra y mantiene el tamaño original */
-    opacity: 1; /* Se mantiene visible */
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0; /* Desaparece al final */
+    }
   }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
+  
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1; /* Aparece al final */
+      transform: translateY(0);
+    }
   }
-  100% {
-    opacity: 0; /* Desaparece al final */
+  
+  @keyframes moveTextUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1; /* Aparece al final */
+    }
   }
-}
-
-@keyframes fadeInText {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1; /* Aparece al final */
-    transform: translateY(0);
-  }
-}
-
-@keyframes moveTextUp {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1; /* Aparece al final */
-  }
-}
+  
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
