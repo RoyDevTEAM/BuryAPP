@@ -31,9 +31,8 @@
   
   .welcome-text {
     position: absolute;
-    bottom: 20%; /* Ajusta la posición vertical según sea necesario */
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 10%; /* Ajusta la posición vertical para estar más cerca del centro */
+    transform: translate(-50%, 0); /* Asegura que esté centrado horizontalmente */
     font-size: 2rem;
     color: #fff; /* Letras blancas */
     z-index: 10000;
