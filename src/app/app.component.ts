@@ -24,6 +24,6 @@ export class AppComponent {
       setTimeout(() => {
         this.showSplashScreen = false;
       }, 500); // Esperar a que la transición termine (0.5s)
-    }, 5000); // Mostrar el splash screen por 3 segundos
+    }, 3000); // Mostrar el splash screen por 3 segundos
   }
 }
