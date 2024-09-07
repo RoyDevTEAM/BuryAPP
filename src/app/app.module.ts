@@ -7,13 +7,13 @@ import { HttpClientModule } from '@angular/common/http';  // Importa HttpClientM
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { Network } from '@capacitor/network';
 
+import { SplashScreenPageModule } from './components/splash-screen/splash-screen.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-
+    SplashScreenPageModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule  // Agrega HttpClientModule aquí

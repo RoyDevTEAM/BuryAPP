@@ -28,6 +28,8 @@ ion-content {
   --background: #000;
   --border-radius: 15px;
   margin-bottom: 20px;
+  margin-top: 10px;
+
   top: 0;
   border: solid 3px #5e09c0;
   border-radius: 28px;
@@ -75,8 +77,8 @@ ion-card {
 /* Estilo del contenedor de filtros de categoría */
 .category-filters {
   display: flex;
-  gap: 5px;
-  margin-bottom: 15px;
+  gap: 2px;
+  margin-bottom: 5px;
   flex-wrap: wrap; /* Permitir que los botones se envuelvan */
   justify-content: center; /* Centrar los botones horizontalmente */
 }
@@ -84,7 +86,7 @@ ion-card {
 .responsive-category-filters {
   display: flex;
   flex-wrap: wrap; /* Permitir que los botones se apilen en dispositivos pequeños */
-  gap: 7px;
+  gap: 5px;
   justify-content: center; /* Centra los botones en la pantalla */
 }
 
@@ -118,7 +120,7 @@ ion-card-content {
 }
 
 ion-card-content p {
-  font-size: 0.6rem; /* Tamaño de fuente más grande */
+  font-size: 0.8rem; /* Tamaño de fuente más grande */
   margin: 0;
   line-height: 1.1;
   text-align: center; /* Centrar el texto */

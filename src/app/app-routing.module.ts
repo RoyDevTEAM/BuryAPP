@@ -58,6 +58,10 @@ const routes: Routes = [
   {
     path: 'error',
     loadChildren: () => import('./components/error/error.module').then( m => m.ErrorPageModule)
+  },
+  {
+    path: 'splash-screen',
+    loadChildren: () => import('./components/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
   }
 ];
 
