@@ -55,7 +55,7 @@ ion-input {
   width: 100%;
   max-width: 1000px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas por defecto */
+  grid-template-columns: repeat(2, 1fr); /* Tres columnas por defecto */
   margin-top: 10px;
   gap: 10px;
 }
@@ -152,7 +152,7 @@ ion-card-content p {
   max-width: 500px;
   color: white;
   background-color: black; /* Fondo negro */
-  border: 2px solid white; /* Bordes blancos */
+  border: 1px solid white; /* Bordes blancos */
   border-radius: 10px;
 }
 
@@ -165,9 +165,9 @@ ion-card-content p {
 }
 
 .bar-logo-list {
-  width: 70px; /* Aumentar tamaño de la imagen */
-  height: 70px;
-  border-radius: 10%; /* Bordes redondeados */
+  width: 40px; /* Aumentar tamaño de la imagen */
+  height: 40px;
+  border-radius: 10%; /* Bordes redonderferfdgfdggggados */
   margin-right: 15px;
 }
 
