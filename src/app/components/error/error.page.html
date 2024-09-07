@@ -1,0 +1,24 @@
+<ion-content class="ion-padding error-container" fullscreen>
+  <div class="error-content animate__animated animate__shakeX">
+    <div class="error-icon">
+      <i class="fas fa-wifi-slash fa-5x"></i>
+    </div>
+    <h1 class="error-title">¡Oops! Sin Conexión</h1>
+    <p class="error-message">
+      Parece que perdiste tu conexión a Internet. Por favor, verifica tu conexión y vuelve a intentarlo.
+    </p>
+    
+    <ion-button class="retry-button" (click)="retryConnection()">
+      <i class="fas fa-redo"></i> Reintentar
+    </ion-button>
+    
+    <div class="suggestions">
+      <p>Consejos para solucionar el problema:</p>
+      <ul>
+        <li><i class="fas fa-plug"></i> Verifica tu conexión Wi-Fi o de datos móviles.</li>
+        <li><i class="fas fa-sync-alt"></i> Reinicia tu dispositivo.</li>
+        <li><i class="fas fa-network-wired"></i> Intenta conectarte a otra red.</li>
+      </ul>
+    </div>
+  </div>
+</ion-content>

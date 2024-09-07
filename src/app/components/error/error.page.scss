@@ -1,0 +1,82 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #FF416C, #FF4B2B);
+  color: white;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-icon {
+  margin-bottom: 20px;
+  color: #FFF;
+}
+
+.error-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+.error-message {
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.retry-button {
+  --background: #ffcc00;
+  --color: black;
+  margin-top: 20px;
+  border-radius: 50px;
+  width: 160px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounceIn 2s;
+}
+
+.suggestions {
+  margin-top: 20px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+.suggestions ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.suggestions li {
+  margin: 5px 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

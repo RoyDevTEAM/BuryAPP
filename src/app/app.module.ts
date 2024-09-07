@@ -7,16 +7,18 @@ import { HttpClientModule } from '@angular/common/http';  // Importa HttpClientM
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Network } from '@capacitor/network';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule  // Agrega HttpClientModule aquí
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy   }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'terminos',
     loadChildren: () => import('./components/terminos/terminos.module').then( m => m.TerminosPageModule)
+  },
+  {
+    path: 'error',
+    loadChildren: () => import('./components/error/error.module').then( m => m.ErrorPageModule)
   }
 ];
 

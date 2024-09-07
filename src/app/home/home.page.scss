@@ -14,9 +14,9 @@ ion-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Alinear al inicio para mantener el buscador visible */
-  height: 100%;
-  padding: 20px;
+  justify-content: flex-start; /* Ajusta la posición de inicio del contenido */
+  height: auto; /* Ajusta la altura automáticamente para permitir desplazamiento */ 
+   padding: 20px;
   background: transparent;
   border-radius: 10px;
   max-width: 100%;
@@ -59,6 +59,7 @@ ion-input {
   grid-template-columns: repeat(3, 1fr); /* Tres columnas */
   margin-top: 10px;
   gap: 10px;
+  
 }
 
 /* Estilo de las tarjetas de bares */
