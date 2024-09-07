@@ -14,6 +14,6 @@ export class TerminosPage implements OnInit {
   }
  // Método para navegar hacia atrás
  goBack() {
-  this.navCtrl.navigateBack('/login'); // Navega a la página de login
+  this.navCtrl.navigateBack('/register'); // Navega a la página de login
 }
 }

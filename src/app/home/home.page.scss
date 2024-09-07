@@ -50,19 +50,17 @@ ion-input {
   margin: 20px;
   text-align: center;
 }
-
 /* Contenedor de bares */
 .bars-container {
   width: 100%;
   max-width: 1000px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas por defecto */
   margin-top: 10px;
   gap: 10px;
-  
 }
 
-/* Estilo de las tarjetas de bares */
+
 /* Estilo de las tarjetas de bares */
 ion-card {
   border-radius: 10px;
@@ -72,7 +70,7 @@ ion-card {
   width: 100%;
   padding: 5px;
   position: relative;
-  height: auto; /* Permitir altura automática para que se ajuste al contenido */
+  height: auto; /* Ajusta a un tamaño más cuadrado */
 }
 
 
@@ -81,6 +79,15 @@ ion-card {
   display: flex;
   gap: 5px;
   margin-bottom: 15px;
+  flex-wrap: wrap; /* Permitir que los botones se envuelvan */
+  justify-content: center; /* Centrar los botones horizontalmente */
+}
+
+.responsive-category-filters {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los botones se apilen en dispositivos pequeños */
+  gap: 7px;
+  justify-content: center; /* Centra los botones en la pantalla */
 }
 
 .bar-card-header {

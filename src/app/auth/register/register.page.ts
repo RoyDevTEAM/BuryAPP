@@ -12,7 +12,6 @@ import { Usuario } from 'src/app/models/usuario.model';
 })
 export class RegisterPage {
   registerForm: FormGroup;
-  termsAccepted: boolean = false; // Variable para el checkbox de términos
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,29 +23,33 @@ export class RegisterPage {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      termsAccepted: [false, Validators.requiredTrue] // Control para el checkbox
     });
   }
 
   async onRegister() {
-    if (!this.termsAccepted) {
+    // Primero verifica si los términos y condiciones no han sido aceptados
+    if (!this.registerForm.get('termsAccepted')?.value) {
       await this.presentAlert('Debes aceptar los términos y condiciones para registrarte.');
       return;
     }
 
-    if (this.registerForm.valid) {
-      const { name, email, password } = this.registerForm.value;
-      const usuario = new Usuario(0, name, email, password);
-
-      try {
-        const response = await this.authService.register(usuario).toPromise();
-        this.router.navigate(['/login']);
-        await this.presentToast('Registro exitoso', 'success');
-      } catch (error) {
-        await this.presentToast('Error en el registro, intenta de nuevo', 'danger');
-      }
-    } else {
+    // Luego verifica la validez del formulario completo
+    if (this.registerForm.invalid) {
       await this.presentToast('Por favor, completa todos los campos correctamente', 'warning');
+      return;
+    }
+
+    const { name, email, password } = this.registerForm.value;
+    const usuario = new Usuario(0, name, email, password);
+
+    try {
+      const response = await this.authService.register(usuario).toPromise();
+      this.router.navigate(['/login']);
+      await this.presentToast('Registro exitoso', 'success');
+    } catch (error) {
+      await this.presentToast('Error en el registro, intenta de nuevo', 'danger');
     }
   }
 

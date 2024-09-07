@@ -1,22 +1,30 @@
 ion-content {
   --background: url('/assets/img/bk.png') no-repeat center center / cover;
-  --keyboard-offset: 0px; /* Asegura que no haya desplazamiento adicional cuando aparece el teclado */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Ajusta la posición de inicio del contenido */
-  height: auto; /* Ajusta la altura automáticamente para permitir desplazamiento */
+  justify-content: center;
+  height: 100%;
   padding: 20px;
   background: transparent;
   border-radius: 10px;
-  max-width: 400px; /* Limitando el ancho del formulario */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  width: 150px;
+  height: 150px;
 }
 
 form {
@@ -29,17 +37,17 @@ ion-item {
   --border-radius: 15px;
   margin-bottom: 15px;
   border: solid 3px #5e09c0;
-  border-radius: 15px;
+border-radius: 15px;
+
+
 }
 
 ion-input {
   --color: white;
 }
-
-ion-label {
-  color: white;
+ion-label{
+  color:white;
 }
-
 .register-button {
   margin-top: 20px;
   --background: #000;
@@ -47,6 +55,8 @@ ion-label {
   text-transform: uppercase;
   border: solid 3px #5e09c0;
   border-radius: 15px;
+
+
 }
 
 .login-text {
@@ -63,7 +73,7 @@ ion-label {
 }
 
 .terms-link {
-  color: #FFD700;
+  color: #FFD700; /* Color amarillo oro para resaltar */
   font-weight: bold;
   text-decoration: underline;
 }
@@ -71,14 +81,4 @@ ion-label {
 .local-register {
   color: white;
   margin-top: 20px;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.logo img {
-  width: 150px;
-  height: 150px;
 }

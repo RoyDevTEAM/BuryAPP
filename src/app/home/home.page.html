@@ -14,13 +14,14 @@
       </ion-input>
     </ion-item>
 
-    <!-- Botones de filtro por categoría -->
-    <div class="category-filters">
-      <ion-button *ngFor="let categoria of categorias" (click)="filterByCategoria(categoria.ID)"  class="login-button">
-        {{ categoria.nombre }}
-      </ion-button>
-      <ion-button (click)="filterByCategoria(null)" class="login-button">All</ion-button>
-    </div>
+   <!-- Botones de filtro por categoría -->
+<div class="category-filters responsive-category-filters">
+  <ion-button *ngFor="let categoria of categorias" (click)="filterByCategoria(categoria.ID)" class="login-button">
+    {{ categoria.nombre }}
+  </ion-button>
+  <ion-button (click)="filterByCategoria(null)" class="login-button">All</ion-button>
+</div>
+
 
     <!-- Mensaje de no encontrado -->
     <div *ngIf="searchTerm && filteredBares.length === 0" class="no-results">

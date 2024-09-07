@@ -11,18 +11,18 @@
       <ion-item>
         <ion-input formControlName="email" label="Gmail" labelPlacement="floating" type="email"></ion-input>
       </ion-item>
-
       <ion-item>
         <ion-input formControlName="password" label="Contraseña" labelPlacement="floating" type="password"></ion-input>
       </ion-item>
 
-      <!-- Checkbox de aceptación de términos -->
-      
-        <ion-checkbox slot="start" [(ngModel)]="termsAccepted"></ion-checkbox>
+      <!-- Checkbox de aceptación de términos independiente -->
+      <div class="terms-container">
+        <ion-checkbox formControlName="termsAccepted"></ion-checkbox>
         <ion-label>
           Acepto los <a href="/terminos" class="terms-link">términos y condiciones</a>
         </ion-label>
-    
+      </div>
+
       <ion-button type="submit" expand="block" class="register-button">Registrar</ion-button>
     </form>
 
