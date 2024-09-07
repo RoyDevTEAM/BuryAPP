@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Estilo de fondo */
 
 
 /* Estilo de fondo */
@@ -29,7 +28,6 @@ ion-content {
   --background: #000;
   --border-radius: 15px;
   margin-bottom: 20px;
-  position: sticky; /* Mantener el buscador fijo en la parte superior */
   top: 0;
   border: solid 3px #5e09c0;
   border-radius: 28px;
@@ -55,9 +53,9 @@ ion-input {
   width: 100%;
   max-width: 1000px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Tres columnas por defecto */
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas por defecto */
   margin-top: 10px;
-  gap: 10px;
+  gap: 5px;
 }
 
 
@@ -107,7 +105,7 @@ ion-card {
 
 /* Título de las tarjetas */
 ion-card-title, ion-card-subtitle {
-  font-size: 1.2rem;
+  font-size: 0.5rem;
   text-align: center;
   color: white;
   margin-top: 0;
@@ -120,9 +118,9 @@ ion-card-content {
 }
 
 ion-card-content p {
-  font-size: 1rem; /* Tamaño de fuente más grande */
+  font-size: 0.6rem; /* Tamaño de fuente más grande */
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.1;
   text-align: center; /* Centrar el texto */
   color: white;
 }
@@ -190,4 +188,26 @@ ion-card-content p {
   text-transform: uppercase;
   color: #5e09c0;
   font-weight: 900;
+}
+
+.transparent-toolbar {
+  --background: transparent;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo {
+  margin-left: 10px; /* Ajusta el margen izquierdo del logo */
+  max-width: 100px; /* Controla el tamaño máximo del logo */
+  display: block;
+
+}
+
+
+.back-button {
+  --color: white; /* Color del ícono de retroceso */
 }

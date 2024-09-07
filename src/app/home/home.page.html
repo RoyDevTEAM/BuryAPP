@@ -1,10 +1,16 @@
-<!-- home.page.html -->
-
-<ion-content class="ion-padding">
+<ion-content>
   <app-nav-bar></app-nav-bar>
 
-  <div class="home-container" fullscreen scroll="true">
+  <!-- Encabezado fijo -->
+  <ion-header>
+    <ion-toolbar class="transparent-toolbar">
+      <div class="logo">
+        <img src="/assets/img/header.png" alt="Logo" class="header-logo">
+      </div>
+    </ion-toolbar>
+  </ion-header>
 
+  <div class="home-container" fullscreen scroll="true">
     <!-- Buscador dinámico -->
     <ion-item class="search-item">
       <ion-input 
@@ -14,14 +20,13 @@
       </ion-input>
     </ion-item>
 
-   <!-- Botones de filtro por categoría -->
-<div class="category-filters responsive-category-filters">
-  <ion-button *ngFor="let categoria of categorias" (click)="filterByCategoria(categoria.ID)" class="login-button">
-    {{ categoria.nombre }}
-  </ion-button>
-  <ion-button (click)="filterByCategoria(null)" class="login-button">All</ion-button>
-</div>
-
+    <!-- Botones de filtro por categoría -->
+    <div class="category-filters responsive-category-filters">
+      <ion-button *ngFor="let categoria of categorias" (click)="filterByCategoria(categoria.ID)" class="login-button">
+        {{ categoria.nombre }}
+      </ion-button>
+      <ion-button (click)="filterByCategoria(null)" class="login-button">All</ion-button>
+    </div>
 
     <!-- Mensaje de no encontrado -->
     <div *ngIf="searchTerm && filteredBares.length === 0" class="no-results">
@@ -31,8 +36,7 @@
     <!-- Mostrar bares como tarjetas -->
     <div class="bars-container" *ngIf="!searchTerm">
       <ion-card *ngFor="let bar of filteredBares" [routerLink]="['/detalle-bar', bar.ID]" class="bar-card">
-        <div class="bar-card-header" [style.backgroundImage]="'url(' + bar.LogoURL + ')'">
-        </div>
+        <div class="bar-card-header" [style.backgroundImage]="'url(' + bar.LogoURL + ')'"></div>
         <ion-card-content>
           <p>{{ bar.Nombre }}</p>
         </ion-card-content>
