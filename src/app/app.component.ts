@@ -39,7 +39,6 @@ export class AppComponent implements OnInit {
     } else {
       // Si ya se ha visto el splash screen, redirigir inmediatamente a /login
       this.showSplashScreen = false;
-      this.router.navigate(['/login']);
     }
   }
 }
