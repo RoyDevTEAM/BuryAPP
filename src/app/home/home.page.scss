@@ -79,14 +79,12 @@ ion-card {
   display: flex;
   gap: 2px;
   margin-bottom: 5px;
-  flex-wrap: wrap; /* Permitir que los botones se envuelvan */
   justify-content: center; /* Centrar los botones horizontalmente */
 }
 
 .responsive-category-filters {
   display: flex;
-  flex-wrap: wrap; /* Permitir que los botones se apilen en dispositivos pequeños */
-  gap: 5px;
+  gap: 2px;
   justify-content: center; /* Centra los botones en la pantalla */
 }
 

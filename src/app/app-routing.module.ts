@@ -3,12 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',  // Define la ruta de login antes de la redirección por defecto
+    path: 'login',
     loadChildren: () => import('./auth/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: '',
-    redirectTo: 'login',  // Redirige a login en lugar de home
+    redirectTo: 'login', // Redirige a 'login' en lugar de '/login'
     pathMatch: 'full'
   },
   {
@@ -17,51 +17,51 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'nav-bar',
-    loadChildren: () => import('./shared/nav-bar/nav-bar.module').then( m => m.NavBarPageModule)
+    loadChildren: () => import('./shared/nav-bar/nav-bar.module').then(m => m.NavBarPageModule)
   },
   {
     path: 'detalle-evento',
-    loadChildren: () => import('./components/detalle-evento/detalle-evento.module').then( m => m.DetalleEventoPageModule)
+    loadChildren: () => import('./components/detalle-evento/detalle-evento.module').then(m => m.DetalleEventoPageModule)
   },
   {
     path: 'detalle-menu/:id',
-    loadChildren: () => import('./components/detalle-menu/detalle-menu.module').then( m => m.DetalleMenuPageModule)
+    loadChildren: () => import('./components/detalle-menu/detalle-menu.module').then(m => m.DetalleMenuPageModule)
   },
   {
     path: 'detalle-eventos/:id',
-    loadChildren: () => import('./components/detalle-eventos/detalle-eventos.module').then( m => m.DetalleEventosPageModule)
+    loadChildren: () => import('./components/detalle-eventos/detalle-eventos.module').then(m => m.DetalleEventosPageModule)
   },
   {
     path: 'detalle-mesa/:id',
-    loadChildren: () => import('./components/detalle-mesa/detalle-mesa.module').then( m => m.DetalleMesaPageModule)
+    loadChildren: () => import('./components/detalle-mesa/detalle-mesa.module').then(m => m.DetalleMesaPageModule)
   },
   {
     path: 'detalle-bar/:id',
-    loadChildren: () => import('./components/detalle-bar/detalle-bar.module').then( m => m.DetalleBarPageModule)
+    loadChildren: () => import('./components/detalle-bar/detalle-bar.module').then(m => m.DetalleBarPageModule)
   },
   {
     path: 'formreserva/:id',
-    loadChildren: () => import('./components/formreserva/formreserva.module').then( m => m.FormreservaPageModule)
+    loadChildren: () => import('./components/formreserva/formreserva.module').then(m => m.FormreservaPageModule)
   },
   {
     path: 'favoritos',
-    loadChildren: () => import('./components/favoritos/favoritos.module').then( m => m.FavoritosPageModule)
+    loadChildren: () => import('./components/favoritos/favoritos.module').then(m => m.FavoritosPageModule)
   },
   {
     path: 'terminos',
-    loadChildren: () => import('./components/terminos/terminos.module').then( m => m.TerminosPageModule)
+    loadChildren: () => import('./components/terminos/terminos.module').then(m => m.TerminosPageModule)
   },
   {
     path: 'error',
-    loadChildren: () => import('./components/error/error.module').then( m => m.ErrorPageModule)
+    loadChildren: () => import('./components/error/error.module').then(m => m.ErrorPageModule)
   },
   {
     path: 'splash-screen',
-    loadChildren: () => import('./components/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
+    loadChildren: () => import('./components/splash-screen/splash-screen.module').then(m => m.SplashScreenPageModule)
   }
 ];
 
