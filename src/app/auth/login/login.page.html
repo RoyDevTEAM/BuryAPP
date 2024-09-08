@@ -7,7 +7,7 @@
       <img src="/assets/img/logo.png" alt="Cocktail Icon">
     </div>
     
-    <form (ngSubmit)="login()">
+    <form (ngSubmit)="login()" #loginForm="ngForm">
       <ion-item>
         <ion-input 
           [(ngModel)]="email"
@@ -15,8 +15,14 @@
           label="Email"
           labelPlacement="floating"
           type="email"
-          required>
+          required
+          #emailInput="ngModel"
+          [class.invalid]="emailInput.invalid && emailInput.touched"
+          placeholder="Introduce tu correo">
         </ion-input>
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="error-message">
+          El correo es requerido y debe ser válido.
+        </div>
       </ion-item>
       
       <ion-item>
@@ -26,11 +32,17 @@
           label="Contraseña"
           labelPlacement="floating"
           type="password"
-          required>
+          required
+          #passwordInput="ngModel"
+          [class.invalid]="passwordInput.invalid && passwordInput.touched"
+          placeholder="Introduce tu contraseña">
         </ion-input>
+        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error-message">
+          La contraseña es requerida.
+        </div>
       </ion-item>
       
-      <ion-button expand="block" class="login-button" type="submit">Ingresar</ion-button>
+      <ion-button expand="block" class="login-button" type="submit" [disabled]="loginForm.invalid">Ingresar</ion-button>
     </form>
     
     <p class="register-text">¿No tienes una cuenta? <a href="/register">Regístrate</a></p>

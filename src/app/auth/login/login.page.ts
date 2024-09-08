@@ -17,44 +17,45 @@ export class LoginPage {
   email: string = '';
   password: string = '';
   toastMessage: string = '';
-  showSplashScreen = true; // Inicialmente mostrar el splash screen
+  showSplashScreen = true;
 
   constructor(
     private authService: AuthService,
     private router: Router,
     private toastController: ToastController
   ) {
-
     this.initializeApp();
-
   }
 
   async login() {
+    if (!this.email || !this.password) {
+      this.toastMessage = 'Por favor, completa todos los campos.';
+      await this.presentToast();
+      return;
+    }
+
     try {
       const response = await firstValueFrom(this.authService.login(this.email, this.password));
       localStorage.setItem('auth_token', response.access_token);
       this.router.navigate(['/home']);
     } catch (error) {
       console.error('Error en el inicio de sesión:', error);
-      this.toastMessage = 'Credenciales incorrectas';
+      this.toastMessage = 'Credenciales incorrectas o error de conexión.';
       await this.presentToast();
     }
   }
 
   initializeApp() {
     setTimeout(() => {
-      // Aplicar clase de transición para ocultar el splash screen
       const splashElement = document.querySelector('app-splash-screen');
       if (splashElement) {
         splashElement.classList.add('hidden');
       }
-  
-      // Después de la transición, quitar el splash screen
+
       setTimeout(() => {
         this.showSplashScreen = false;
-
-      }, 500); // Esperar a que la transición termine (0.5s)
-    }, 3000); // Mostrar el splash screen por 3 segundos
+      }, 500);
+    }, 3000);
   }
 
   async presentToast() {
