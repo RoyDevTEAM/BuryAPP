@@ -1,0 +1,72 @@
+/* Estilos generales */
+.transparent-toolbar {
+    --background: transparent;
+  }
+  
+  
+  
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.header-logo {
+    width: 100px;
+    height: auto;
+}
+
+.back-button {
+    --color: white;
+}
+  
+  .container {
+    --background: url('/assets/img/bk.png') no-repeat center center / cover;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    --background: rgba(0, 0, 0, 0.7);
+    --border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: justify;
+  }
+  
+
+  .action-buttons ion-button {
+    width: 90%;
+    max-width: 350px;
+    margin: 10px 0;
+    --background: #000;
+    --border-radius: 8px;
+    --color: #ffffff;
+    --border-color: #5e09c0;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--border-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .action-buttons ion-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+ 
+  .toast-message {
+    --background: #333;
+    --color: #fff;
+    --padding: 10px;
+  }
+  

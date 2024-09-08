@@ -62,6 +62,14 @@ const routes: Routes = [
   {
     path: 'splash-screen',
     loadChildren: () => import('./components/splash-screen/splash-screen.module').then(m => m.SplashScreenPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./components/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'informacion-legal',
+    loadChildren: () => import('./components/informacion-legal/informacion-legal.module').then( m => m.InformacionLegalPageModule)
   }
 ];
 

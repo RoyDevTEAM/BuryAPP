@@ -11,6 +11,7 @@ import { EventosService } from 'src/app/services/eventos.service';
 })
 export class DetalleEventosPage implements OnInit {
   evento: Evento | undefined;
+  barId: number | null = null; // ID del bar para mantener el contexto de navegación
 
   constructor(
     private route: ActivatedRoute,
@@ -21,9 +22,11 @@ export class DetalleEventosPage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      const id = parseInt(params.get('id')!, 10);
-      this.loadEventoDetails(id);
-    });
+       this.barId = parseInt(params.get('id')!, 10);
+      if (this.barId) {
+        this.loadEventoDetails(this.barId);
+      } });
+  
   }
 
   loadEventoDetails(id: number) {
@@ -37,6 +40,8 @@ export class DetalleEventosPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/home']);
+    if (this.barId) {
+      this.router.navigate(['/detalle-bar', this.barId]); // Navegar de vuelta usando el ID del bar
+    } 
   }
 }
