@@ -18,7 +18,7 @@
           required
           #emailInput="ngModel"
           [class.invalid]="emailInput.invalid && emailInput.touched"
-          placeholder="Introduce tu correo">
+          placeholder="tu correo">
         </ion-input>
         <div *ngIf="emailInput.invalid && emailInput.touched" class="error-message">
           El correo es requerido y debe ser válido.
@@ -35,7 +35,7 @@
           required
           #passwordInput="ngModel"
           [class.invalid]="passwordInput.invalid && passwordInput.touched"
-          placeholder="Introduce tu contraseña">
+          placeholder="tu contraseña">
         </ion-input>
         <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error-message">
           La contraseña es requerida.
