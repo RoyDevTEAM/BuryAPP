@@ -22,7 +22,7 @@
     <ion-card *ngFor="let producto of productos" class="product-card">
       <ion-card-header class="card-header">
         <ion-card-title class="product-name">{{ producto.Nombre }}</ion-card-title>
-        <span class="product-price">{{ producto.Precio | currency:'USD':'symbol' }}</span>
+        <span class="product-price">{{ producto.Precio  | currency:'BS' }}</span>
       </ion-card-header>
     </ion-card>
   </ion-list>

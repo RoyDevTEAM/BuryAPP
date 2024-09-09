@@ -20,11 +20,11 @@
           <img [src]="mesa.Imagen" alt="Imagen de la Mesa">
         </div>
         <div class="mesa-details">
-          <h2>Mesa {{ mesa.ID }}</h2>
+          <h2>Mesa {{ mesa.id }}</h2>
           <p>{{ mesa.Descripcion }}</p>
           <p>Precio: {{ mesa.Precio | currency:'BS' }}</p>
           <p>Anticipo: {{ mesa.Anticipo | currency:'BS' }}</p>
-          <ion-button (click)="goToReservaForm(mesa.ID)" class="reserve-button">
+          <ion-button (click)="goToReservaForm(mesa.id)" class="reserve-button">
             <ion-icon name="bookmarks-outline"></ion-icon>
             Reservar
           </ion-button>

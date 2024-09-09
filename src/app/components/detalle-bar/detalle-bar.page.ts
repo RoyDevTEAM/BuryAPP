@@ -176,7 +176,7 @@ export class DetalleBarPage implements OnInit {
     this.horariosService.getHorario(id).subscribe(
       data => {
         if (data) {
-          this.horarioDetails = `Día: ${data.Dia}\nApertura: ${data.HoraApertura}\nCierre: ${data.HoraCierre}`;
+          this.horarioDetails = `${data.Dia}\nApertura: ${data.HoraApertura}\nCierre: ${data.HoraCierre}`;
         }
       },
       error => {

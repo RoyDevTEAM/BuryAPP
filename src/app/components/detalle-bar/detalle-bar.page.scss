@@ -23,27 +23,20 @@
   padding: 20px;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
 .button-Eventos {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
-.button-container ion-button {
-  margin: 0 10px;
-}
 .button-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-ion-button {
+.custom-button {
   --border-radius: 15px;
   border-radius: 15px;
   --background: #000;
@@ -53,6 +46,7 @@ ion-button {
   --padding-end: 10px;
   font-weight: 700;
   border: solid 2px #5e09c0;
+  margin: 0 5px; /* Ajusta el espaciado entre botones */
 }
 
 .media-section ion-card {
@@ -84,24 +78,28 @@ ion-button {
   margin: 0 10px;
 }
 
+
 ion-modal {
+  --background: black;
+  --border-radius: 12px;
   --width: 90%;
   --height: 200px;
-  --border-radius: 12px;
-  --background: black;
-  max-width: 400px;
+  max-width: 360px;
 }
+ion-content{
+  --background: black;
+  --color: white;
+  border: solid 4px #5e09c0;
 
-ion-modal ion-header {
-  --background: #5e09c0;
+
+
+}
+ion-header {
+  --background:black;
   --color: white;
 }
 
-ion-modal ion-button {
-  color: white;
-}
-
-.modal-content {
+ion-modal .modal-content {
   color: white;
   font-size: 16px;
   line-height: 1.6;
@@ -109,11 +107,6 @@ ion-modal ion-button {
   text-align: justify;
 }
 
-/* Estilos para el iframe del video */
-.responsive-video iframe {
-  width: 100%;
-  height: 315px; /* Altura fija para el iframe, ajusta según sea necesario */
-}
 .toast-message {
   --background: #333;
   --color: #fff;

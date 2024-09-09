@@ -1,7 +1,7 @@
 // src/app/models/mesa.model.ts
 
 export interface Mesa {
-    ID: number;
+    id: number;
     Descripcion?: string;
     Precio: number;
     Anticipo: number;

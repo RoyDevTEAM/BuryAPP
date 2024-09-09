@@ -11,8 +11,8 @@
       </div>
     </ion-toolbar>
   </ion-header>
+
   <div class="reserva-container">
-   
     <form (ngSubmit)="enviarReserva()">
       <!-- Campo de Nombre -->
       <ion-item>
@@ -40,29 +40,24 @@
       <!-- Campo de Fecha -->
       <ion-item>
         <ion-input 
-          placeholder="Seleccione Fecha"
-          [value]="fecha ? fecha : ''" 
-          readonly
-          (click)="toggleFecha()">
-        </ion-input>
-        <ion-icon name="calendar-outline" slot="end" (click)="toggleFecha()"></ion-icon>
-      </ion-item>
-      <div class="fecha-container" [ngStyle]="{ display: mostrarFecha ? 'block' : 'none' }">
-        <ion-datetime 
           [(ngModel)]="fecha"
           name="fecha"
-          presentation="date"
-          (ionChange)="toggleFecha()"
-          required>
-        </ion-datetime>
-      </div>
+          placeholder="dd/mm/yyyy"
+          label="Fecha"
+          labelPlacement="floating"
+          required
+          (keyup)="autocompletarFecha($event)">
+        </ion-input>
+      </ion-item>
 
-      <!-- Campo de Hora (Solo Texto) -->
+      <!-- Campo de Hora -->
       <ion-item>
         <ion-input 
           [(ngModel)]="hora"
           name="hora"
           placeholder="Ingrese la Hora (HH:MM)"
+          label="Hora"
+          labelPlacement="floating"
           required>
         </ion-input>
       </ion-item>
