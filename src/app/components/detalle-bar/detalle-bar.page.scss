@@ -51,7 +51,7 @@
 
 .media-section ion-card {
   margin-bottom: 10px;
-  --background: rgba(255, 255, 255, 0.2);
+  --background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
   --border-radius: 8px;
   overflow: hidden; /* Asegura que el contenido no sobresalga del borde del card */
 }
