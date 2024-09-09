@@ -29,11 +29,16 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
-    return this.http.post(`${this.apiUrl}/logout`, {}, {
+    const logoutObservable = this.http.post(`${this.apiUrl}/logout`, {}, {
       headers: {
         'Authorization': `Bearer ${this.getToken()}`
       }
     });
+
+    // Elimina el token del almacenamiento local
+    localStorage.removeItem('auth_token');
+
+    return logoutObservable;
   }
 
   getUserInfo(): Observable<Usuario> {
@@ -50,8 +55,11 @@ export class AuthService {
     });
   }
   
-
-  private getToken(): string | null {
+ // Nueva función isLoggedIn
+ isLoggedIn(): boolean {
+  return !!this.getToken(); // Devuelve true si hay token, false si no.
+}
+   getToken(): string | null {
     return localStorage.getItem('auth_token');
   }
 }

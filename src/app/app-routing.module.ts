@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard'; // Importa el guard
 
 const routes: Routes = [
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    canActivate: [AuthGuard] // Protege la ruta con el guard
+  },
   {
     path: 'login',
     loadChildren: () => import('./auth/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: '',
-    redirectTo: 'login', // Redirige a 'login' en lugar de '/login'
+    redirectTo: 'home', // Redirige a 'home' por defecto
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  },
+  
   {
     path: 'register',
     loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterPageModule)
@@ -65,11 +68,11 @@ const routes: Routes = [
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./components/perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./components/perfil/perfil.module').then(m => m.PerfilPageModule)
   },
   {
     path: 'informacion-legal',
-    loadChildren: () => import('./components/informacion-legal/informacion-legal.module').then( m => m.InformacionLegalPageModule)
+    loadChildren: () => import('./components/informacion-legal/informacion-legal.module').then(m => m.InformacionLegalPageModule)
   }
 ];
 
