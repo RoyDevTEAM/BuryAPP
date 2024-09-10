@@ -54,8 +54,8 @@ export class LoginPage {
 
       setTimeout(() => {
         this.showSplashScreen = false;
-      }, 500);
-    }, 3000);
+      }, 3000);
+    }, 2000);
   }
 
   async presentToast() {

@@ -38,18 +38,18 @@ ion-menu-button {
 }
 
 ion-menu::part(backdrop) {
-  background-color: var(--color-silver);
+  background-color:rgba(0, 0, 0, 0.7);
 }
 
 ion-menu::part(container) {
   border-radius: 0 20px 20px 0;
-  box-shadow: 4px 0px 16px var(--color-silver_2);
+  box-shadow: 4px 0px 16px #7c4dff;
 }
 
 .menu-header {
   padding: 20px;
-  background: var(--color-black);
-  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
 }
 
 .menu-header h2 {
@@ -65,7 +65,7 @@ ion-menu::part(container) {
 }
 
 ion-content {
-  --background: #002fff;
+  --background:black;
 }
 
 ion-list {

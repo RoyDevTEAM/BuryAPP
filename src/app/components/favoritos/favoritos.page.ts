@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { Favorito } from 'src/app/models/favorito.model';
 import { FavoritosService } from 'src/app/services/favoritos.service';
-import { Bar } from 'src/app/models/bar.model'; // Asegúrate de importar el modelo Bar
+import { Favorito } from 'src/app/models/favorito.model'; // Asegúrate de importar el modelo Favorito
 
 @Component({
   selector: 'app-favoritos',
@@ -10,7 +9,7 @@ import { Bar } from 'src/app/models/bar.model'; // Asegúrate de importar el mod
   styleUrls: ['./favoritos.page.scss'],
 })
 export class FavoritosPage implements OnInit {
-  favoritos: Bar[] = []; // Lista de bares favoritos
+  favoritos: Favorito[] = []; // Guarda todos los favoritos, no solo los bares
 
   constructor(
     private favoritosService: FavoritosService,
@@ -23,7 +22,7 @@ export class FavoritosPage implements OnInit {
 
   cargarFavoritos() {
     this.favoritosService.getFavoritos().subscribe((favoritos) => {
-      this.favoritos = favoritos.map(favorito => favorito.bar); // Extrae los bares favoritos
+      this.favoritos = favoritos; // Guarda la lista completa de favoritos
     });
   }
 
@@ -52,7 +51,7 @@ export class FavoritosPage implements OnInit {
 
   eliminarFavorito(id: number) {
     this.favoritosService.deleteFavorito(id).subscribe(() => {
-      this.favoritos = this.favoritos.filter((favorito) => favorito.ID !== id); // Elimina de la lista de favoritos
+      this.favoritos = this.favoritos.filter((favorito) => favorito.id !== id); // Asegúrate de usar `favorito.id`
     });
   }
 }

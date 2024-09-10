@@ -19,18 +19,16 @@
       <p>No tienes bares favoritos.</p>
     </div>
     <div *ngFor="let favorito of favoritos" class="favorite-card bg-gray-800 p-4 rounded-xl shadow-lg flex items-start">
-      <img [src]="favorito.LogoURL || 'assets/img/default-logo.png'" alt="Logo Bar" class="w-12 h-12 rounded-full mr-4">
+      <img [src]="favorito.bar.LogoURL || 'assets/img/default-logo.png'" alt="Logo Bar" class="w-12 h-12 rounded-full mr-4">
       <div class="flex-1">
-        <h2 class="text-lg font-bold text-white">{{ favorito.Nombre }}</h2>
-        <p class="text-sm text-gray-400">{{ favorito.Descripcion }}</p>
+        <h2 class="text-lg font-bold text-white">{{ favorito.bar.Nombre }}</h2>
+        <p class="text-sm text-gray-400">{{ favorito.bar.Descripcion }}</p>
         <div class="flex items-center mt-2 text-gray-400">
           <i class="fas fa-map-marker-alt mr-1"></i>
-          <span class="text-sm">{{ favorito.Ubicacion || 'Ubicación no disponible' }}</span>
-          <i class="fas fa-phone ml-4 mr-1"></i>
-          <span class="text-sm">{{ favorito.Telefono || 'Teléfono no disponible' }}</span>
+          <span class="text-sm">{{ favorito.bar.Ubicacion || 'Ubicación no disponible' }}</span>
         </div>
       </div>
-      <button (click)="confirmEliminarFavorito(favorito.ID)" class="text-red-500 ml-4">
+      <button (click)="confirmEliminarFavorito(favorito.id)" class="text-red-500 ml-4">
         <i class="fas fa-trash-alt"></i> <!-- Icono de FontAwesome -->
       </button>
     </div>
