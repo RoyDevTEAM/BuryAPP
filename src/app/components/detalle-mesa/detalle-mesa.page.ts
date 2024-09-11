@@ -37,6 +37,10 @@ export class DetalleMesaPage implements OnInit {
     this.router.navigate(['/detalle-bar', this.barId]); // Asegúrate de usar el ID correcto del bar
   }
   goToReservaForm(mesaId: number) {
-    this.router.navigate([`/formreserva/${mesaId}`]); // Navegar al formulario de reserva
+    if (this.barId !== null) {
+      this.router.navigate([`/formreserva/${mesaId}/${this.barId}`]); // Navegar al formulario de reserva con el ID de la mesa y del bar
+    }
   }
+  
+  
 }

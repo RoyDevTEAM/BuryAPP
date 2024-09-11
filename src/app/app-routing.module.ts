@@ -47,7 +47,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/detalle-bar/detalle-bar.module').then(m => m.DetalleBarPageModule)
   },
   {
-    path: 'formreserva/:id',
+    path: 'formreserva/:id/:barId', // Cambiado para incluir ambos parámetros
     loadChildren: () => import('./components/formreserva/formreserva.module').then(m => m.FormreservaPageModule)
   },
   {
