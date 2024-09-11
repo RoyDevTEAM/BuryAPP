@@ -46,7 +46,7 @@ export class FormreservaPage implements OnInit {
 
   enviarReserva() {
     if (this.nombre && this.numeroPersonas && this.fecha && this.hora && this.idMesa) {
-      const mensaje = `Bar: ${this.nombreBar}\nNombre: ${this.nombre}\nCantidad de Personas: ${this.numeroPersonas}\nFecha: ${this.fecha}\nHora: ${this.hora}\n Nro de Mesa: ${this.idMesa}`;
+      const mensaje = `Reserva: ${this.nombreBar}\nNombre: ${this.nombre}\nCantidad de Personas: ${this.numeroPersonas}\nFecha: ${this.fecha}\nHora: ${this.hora}\n Nro de Mesa: ${this.idMesa}`;
       const numeroTelefono = '+59163551738';
       this.enviarMensajeAWhatsApp(numeroTelefono, mensaje);
     } else {
