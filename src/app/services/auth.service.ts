@@ -2,8 +2,10 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { Usuario } from '../models/usuario.model';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app'; 
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ import { Usuario } from '../models/usuario.model';
 export class AuthService {
   private apiUrl = 'https://buryapp-backend-production.up.railway.app/api/auth'; // URL base corregida
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private afAuth: AngularFireAuth) { }
 
   register(usuario: Usuario): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, {
@@ -61,5 +63,10 @@ export class AuthService {
 }
    getToken(): string | null {
     return localStorage.getItem('auth_token');
+  }
+  
+  // Método para el login con Google
+  loginWithGoogle(): Observable<any> {
+    return from(this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()));
   }
 }

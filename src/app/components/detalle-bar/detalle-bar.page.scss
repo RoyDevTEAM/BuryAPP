@@ -1,6 +1,13 @@
 .transparent-toolbar {
   --background: transparent;
 }
+.toolbar1{
+  --background: black;
+  --color: white; /* Color del ícono de retroceso */
+  text-shadow: 
+  0 0 2px #00f, /* Luz muy cercana */
+  0 0 5px #00f; /* Luz cercana */
+}
 
 .logo {
   display: flex;
@@ -89,7 +96,9 @@ ion-modal {
 .modal-content{
   --background: black;
   --color: white;
-  border: solid 4px #5e09c0;
+  text-shadow: 
+  0 0 2px #00f, /* Luz muy cercana */
+  0 0 5px #00f; /* Luz cercana */
 
 
 

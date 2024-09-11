@@ -1,0 +1,67 @@
+.custom-background {
+  --background: url('/assets/img/bk.png') no-repeat center center / cover;
+}
+
+.custom-card {
+  background-color: black; /* Un negro menos intenso */
+  border-radius: 8px; /* Bordes más suaves */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+  padding: 16px;
+}
+
+ion-item {
+  --background: black;
+  color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde más fino */
+  margin-bottom: 8px; /* Espaciado entre elementos */
+}
+
+ion-note {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.custom-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 
+    0 0 2px #00f, /* Luz muy cercana */
+    0 0 5px #00f; /* Luz cercana */
+}
+
+.custom-list-header {
+  --background: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  text-shadow: 0 0 2px #00f;
+}
+
+/* Reducir el uso de sombras intensas */
+ion-item {
+  --background: black;
+  color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  text-shadow: 
+  0 0 2px #00f, /* Luz muy cercana */
+  0 0 5px #00f; /* Luz cercana */
+}
+
+ion-note {
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 
+  0 0 2px #00f, /* Luz muy cercana */
+  0 0 5px #00f; /* Luz cercana */
+}
+ 
+
+ion-list{
+    background: black;
+ 
+}

@@ -127,6 +127,9 @@ ion-card-content {
   padding: 10px;
   background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para el contenido */
   text-align: center; /* Centrar el texto */
+  text-shadow: 
+  0 0 2px #00f, /* Luz muy cercana */
+  0 0 5px #00f; /* Luz cercana */
 }
 
 ion-card-content p {

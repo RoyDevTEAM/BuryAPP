@@ -61,12 +61,11 @@
    <ion-modal [isOpen]="isHorarioModalOpen" (didDismiss)="isHorarioModalOpen = false">
     <ng-template>
       <ion-header>
-        <ion-toolbar color="dark">
+        <ion-toolbar class="toolbar1">
           <ion-title>Horario del Local</ion-title>
           <ion-buttons slot="end">
             <ion-button (click)="isHorarioModalOpen = false">
               <ion-icon name="close-outline"></ion-icon>
-              Cerrar
             </ion-button>
           </ion-buttons>
         </ion-toolbar>
