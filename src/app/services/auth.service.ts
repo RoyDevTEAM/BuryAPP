@@ -9,7 +9,7 @@ import { Usuario } from '../models/usuario.model';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://66.94.114.8:8080/api/auth'; // URL base corregida
+  private apiUrl = 'https://buryapp-backend.onrender.com/api/auth'; // URL base corregida
 
   constructor(private http: HttpClient) { }
 
