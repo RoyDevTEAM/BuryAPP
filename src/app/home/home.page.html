@@ -50,12 +50,13 @@
       </ion-card>
     </div>
 
-    <!-- Mostrar bares como lista -->
-    <ul class="bars-list" *ngIf="searchTerm && isConnected">
-      <li *ngFor="let bar of filteredBares"  [routerLink]="['/detalle-bar', bar.ID]">
-        <img *ngIf="bar.LogoURL" [src]="bar.LogoURL" alt="{{ bar.Nombre }}" class="bar-logo-list">
-        <strong>{{ bar.Nombre }}</strong> - {{ getCategoriaNombre(bar.Categoria_ID) }}<br>
-      </li>
-    </ul>
+  <!-- Modo lista -->
+<ul class="bars-list" *ngIf="searchTerm && isConnected">
+  <li *ngFor="let bar of filteredBares" (click)="goToBarDetail(bar.ID)">
+    <img *ngIf="bar.LogoURL" [src]="bar.LogoURL" alt="{{ bar.Nombre }}" class="bar-logo-list">
+    <strong>{{ bar.Nombre }}</strong> - {{ getCategoriaNombre(bar.Categoria_ID) }}<br>
+  </li>
+</ul>
+
   </div>
 </ion-content>

@@ -46,13 +46,36 @@ export class HomePage implements OnInit {
 
   
 
-  loadCategorias() {
-    if (this.isConnected) {
-      this.categoriasService.getCategorias().subscribe(data => {
-        this.categorias = data;
+  loadBares() {
+    // Verifica si ya existen bares almacenados en localStorage para evitar la recarga
+    const cachedBares = localStorage.getItem('bares');
+    if (cachedBares) {
+      this.bares = JSON.parse(cachedBares);
+      this.filteredBares = this.bares;
+    } else if (this.isConnected) {
+      this.baresService.getBares().subscribe(data => {
+        this.bares = data;
+        this.filteredBares = this.bares;
+        // Almacena los datos en localStorage
+        localStorage.setItem('bares', JSON.stringify(this.bares));
       });
     }
   }
+  
+  loadCategorias() {
+    // Verifica si ya existen categorías almacenadas en localStorage
+    const cachedCategorias = localStorage.getItem('categorias');
+    if (cachedCategorias) {
+      this.categorias = JSON.parse(cachedCategorias);
+    } else if (this.isConnected) {
+      this.categoriasService.getCategorias().subscribe(data => {
+        this.categorias = data;
+        // Almacena las categorías en localStorage
+        localStorage.setItem('categorias', JSON.stringify(this.categorias));
+      });
+    }
+  }
+  
 
   filterBares(event: any) {
     const searchValue = event.target.value.toLowerCase();
