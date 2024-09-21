@@ -44,14 +44,7 @@ export class HomePage implements OnInit {
     window.location.reload();
   }
 
-  loadBares() {
-    if (this.isConnected) {
-      this.baresService.getBares().subscribe(data => {
-        this.bares = data;
-        this.filteredBares = this.bares;
-      });
-    }
-  }
+  
 
   loadCategorias() {
     if (this.isConnected) {
