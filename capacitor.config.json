@@ -1,6 +1,6 @@
 {
-  "appId": "buryApp.app.com",
-  "appName": "buryApp",
+  "appId": "buriapp.app.com",
+  "appName": "buriapp",
   "webDir": "www",
   "bundledWebRuntime": false
 }
