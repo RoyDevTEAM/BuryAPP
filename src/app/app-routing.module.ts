@@ -73,6 +73,10 @@ const routes: Routes = [
   {
     path: 'informacion-legal',
     loadChildren: () => import('./components/informacion-legal/informacion-legal.module').then(m => m.InformacionLegalPageModule)
+  },
+  {
+    path: 'datos-personales',
+    loadChildren: () => import('./components/datos-personales/datos-personales.module').then( m => m.DatosPersonalesPageModule)
   }
 ];
 
