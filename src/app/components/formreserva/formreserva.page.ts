@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BaresService } from 'src/app/services/bares.service';
-import { AuthService } from 'src/app/services/auth.service'; // Servicio de autenticación
 
 @Component({
   selector: 'app-formreserva',
@@ -9,7 +8,7 @@ import { AuthService } from 'src/app/services/auth.service'; // Servicio de aute
   styleUrls: ['./formreserva.page.scss'],
 })
 export class FormreservaPage implements OnInit {
-  nombreUsuario: string = ''; // Nuevo campo para el nombre del usuario obtenido del token
+  nombreUsuario: string = ''; // Campo manual para el nombre del usuario
   numeroPersonas: number | null = null;
   fecha: string = ''; 
   hora: string | null = null;
@@ -21,8 +20,7 @@ export class FormreservaPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private baresService: BaresService,
-    private authService: AuthService // Inyecta el servicio de autenticación
+    private baresService: BaresService
   ) {}
 
   ngOnInit() {
@@ -34,16 +32,6 @@ export class FormreservaPage implements OnInit {
       // Obtener el nombre del bar
       this.obtenerNombreBar(this.idBar);
     });
-
-    // Obtener el nombre del usuario desde el token
-    this.authService.getUserInfo().subscribe(
-      (usuario) => {
-        this.nombreUsuario = usuario.name; // Asigna el nombre del usuario
-      },
-      (error) => {
-        console.error('Error al obtener la información del usuario:', error);
-      }
-    );
   }
 
   obtenerNombreBar(id: number) {

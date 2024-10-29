@@ -43,7 +43,7 @@ export class DetalleBarPage implements OnInit {
       this.loadBarDetails(id);
       this.loadMedia(id);
       this.loadHorario(id);
-      this.checkIfFavorito(id);
+      //this.checkIfFavorito(id);
     });
   }
 
@@ -104,7 +104,7 @@ export class DetalleBarPage implements OnInit {
     );
   }
 
-  checkIfFavorito(id: number) {
+  /*checkIfFavorito(id: number) {
     this.favoritosService.getFavoritos().subscribe(
       favoritos => {
         this.isFavorito = favoritos.some(fav => fav.bar_id === id);
@@ -113,17 +113,17 @@ export class DetalleBarPage implements OnInit {
         this.presentToast('Error al verificar favoritos');
       }
     );
-  }
+  }*/
 
-  async toggleFavorito() {
+ /* async toggleFavorito() {
     if (this.isFavorito) {
       await this.removeFromFavoritos();
     } else {
       await this.addToFavoritos();
     }
-  }
+  }*/
 
-  async addToFavoritos() {
+  /*async addToFavoritos() {
     if (this.bar) {
       this.favoritosService.addFavorito(this.bar.ID).subscribe(
         async () => {
@@ -135,9 +135,9 @@ export class DetalleBarPage implements OnInit {
         }
       );
     }
-  }
+  }*/
 
-  async removeFromFavoritos() {
+  /*async removeFromFavoritos() {
     if (this.bar) {
       this.favoritosService.getFavoritos().subscribe(
         favoritos => {
@@ -159,7 +159,7 @@ export class DetalleBarPage implements OnInit {
         }
       );
     }
-  }
+  }*/
 
   async presentToast(message: string) {
     const toast = await this.toastController.create({

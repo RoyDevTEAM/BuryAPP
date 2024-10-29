@@ -1,7 +1,5 @@
-// src/app/services/categorias.service.ts
-
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Categoria } from '../models/categoria.model';
 
@@ -15,44 +13,26 @@ export class CategoriasService {
 
   // Obtener todas las categorías
   getCategorias(): Observable<Categoria[]> {
-    return this.http.get<Categoria[]>(this.apiUrl, {
-      headers: this.getAuthHeaders()
-    });
+    return this.http.get<Categoria[]>(this.apiUrl);
   }
 
   // Obtener una categoría por ID
   getCategoria(id: number): Observable<Categoria> {
-    return this.http.get<Categoria>(`${this.apiUrl}/${id}`, {
-      headers: this.getAuthHeaders()
-    });
+    return this.http.get<Categoria>(`${this.apiUrl}/${id}`);
   }
 
   // Crear una nueva categoría
   createCategoria(categoria: Categoria): Observable<any> {
-    return this.http.post(this.apiUrl, categoria, {
-      headers: this.getAuthHeaders()
-    });
+    return this.http.post(this.apiUrl, categoria);
   }
 
   // Actualizar una categoría existente
   updateCategoria(id: number, categoria: Categoria): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, categoria, {
-      headers: this.getAuthHeaders()
-    });
+    return this.http.put(`${this.apiUrl}/${id}`, categoria);
   }
 
   // Eliminar una categoría
   deleteCategoria(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-
-  // Método para obtener las cabeceras de autenticación
-  private getAuthHeaders(): HttpHeaders {
-    const token = localStorage.getItem('auth_token'); // Obtiene el token de autenticación del almacenamiento local
-    return new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

@@ -13,13 +13,16 @@ import { Router } from '@angular/router';
 export class NavBarPage implements OnInit {
   usuario: Usuario | null = null; // Almacena la información del usuario
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    //private authService: AuthService, 
+    
+    private router: Router) {}
 
   ngOnInit() {
-    this.cargarInformacionUsuario();
+   // this.cargarInformacionUsuario();
   }
 
-  cargarInformacionUsuario() {
+  /*cargarInformacionUsuario() {
     this.authService.getUserInfo().subscribe(
       (data: Usuario) => {
         this.usuario = data; // Asigna la información del usuario
@@ -28,8 +31,8 @@ export class NavBarPage implements OnInit {
         console.error('Error al obtener la información del usuario:', error);
       }
     );
-  }
-  cerrarSesion() {
+  }*/
+  /*cerrarSesion() {
     this.authService.logout().subscribe(
       () => {
         this.usuario = null; // Limpia la información del usuario
@@ -39,5 +42,5 @@ export class NavBarPage implements OnInit {
         console.error('Error al cerrar sesión:', error);
       }
     );
-  }
+  }*/
 }

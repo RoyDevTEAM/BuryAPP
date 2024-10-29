@@ -14,6 +14,18 @@
 
   <div class="reserva-container">
     <form (ngSubmit)="enviarReserva()">
+      <!-- Campo de Nombre del Usuario -->
+      <ion-item>
+        <ion-input 
+          [(ngModel)]="nombreUsuario"
+          name="nombreUsuario"
+          label="Nombre"
+          labelPlacement="floating"
+          type="text"
+          required>
+        </ion-input>
+      </ion-item>
+
       <!-- Campo de Número de Personas -->
       <ion-item>
         <ion-input 
