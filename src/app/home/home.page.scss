@@ -155,27 +155,31 @@ ion-card-content p {
   width: 100%;
   max-width: 500px;
   color: white;
-}
-
-/* Estilo de la lista de bares */
-.bars-list {
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-  max-width: 500px;
-  color: white;
   background-color: black; /* Fondo negro */
   border: 1px solid white; /* Bordes blancos */
   border-radius: 10px;
 }
 
+/* Asegúrate de que cada elemento de la lista ocupe todo el ancho */
 .bars-list li {
   display: flex;
   align-items: center; /* Centrar verticalmente los elementos dentro de la lista */
-  margin: 10px;
-  padding: 10px;
-  border-bottom: 1px solid white; /* Línea de separación entre elementos */
+  margin: 0; /* Elimina el margen */
+  padding: 15px; /* Añade padding para un área clickeable mayor */
+  border-bottom: 1px solid white; /* Línea divisoria */
+  cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
 }
+
+/* Eliminar el último borde */
+.bars-list li:last-child {
+  border-bottom: none; /* Eliminar el borde inferior del último elemento */
+}
+
+/* Efecto de hover */
+.bars-list li:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Efecto al pasar el mouse */
+}
+
 
 .bar-logo-list {
   width: 40px; /* Aumentar tamaño de la imagen */
