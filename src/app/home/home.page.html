@@ -52,11 +52,10 @@
 
   <!-- Modo lista -->
 <ul class="bars-list" *ngIf="searchTerm && isConnected">
-  <li *ngFor="let bar of filteredBares" (click)="goToBarDetail(bar.ID)">
+  <li *ngFor="let bar of filteredBares" (click)="goToBarDetail(bar.ID)" class="list-item">
     <img *ngIf="bar.LogoURL" [src]="bar.LogoURL" alt="{{ bar.Nombre }}" class="bar-logo-list">
     <strong>{{ bar.Nombre }}</strong> - {{ getCategoriaNombre(bar.Categoria_ID) }}<br>
   </li>
 </ul>
-
   </div>
 </ion-content>
