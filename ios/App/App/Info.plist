@@ -17,7 +17,7 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.0.1</string> <!-- Nueva versión -->
+    <string>1.0.2</string> <!-- Nueva versión -->
     <key>CFBundleVersion</key>
     <string>2</string> <!-- Nuevo número de compilación -->
     <key>LSRequiresIPhoneOS</key>
