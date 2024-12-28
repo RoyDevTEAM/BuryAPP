@@ -1,4 +1,4 @@
-package buriAppOficial.app.com;
+package buriapp.app.com;
 
 import com.getcapacitor.BridgeActivity;
 
