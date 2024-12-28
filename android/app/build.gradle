@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "buriAppOficial.app.com"
+    namespace "buriapp.app.com"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "buriAppOficial.app.com"
