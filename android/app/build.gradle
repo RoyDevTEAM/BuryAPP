@@ -4,7 +4,7 @@ android {
     namespace "buriapp.app.com"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "buriAppOficial.app.com"
+        applicationId "buriapp.app.com"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 3
